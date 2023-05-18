@@ -20,10 +20,10 @@ def form():
 
 
 def calculate(func, num, round_value, format):
-    if bool(format != 'Градусы'):
-        format_result = (num * 180 / math.pi)
+    if bool(format == 'Градусы'):
+        format_result = math.radians(num)
     else:
-        format_result = (num / 360 * math.pi * 2)
+        format_result = num
     if bool(func == 'sin'):
         result = float(math.sin(format_result))
     elif bool(func == 'cos'):
